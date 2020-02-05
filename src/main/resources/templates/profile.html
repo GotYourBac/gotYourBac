@@ -1,6 +1,5 @@
 <!doctype html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-
 <head>
     <meta charset="UTF-8">
     <title>HomePage</title>
@@ -11,19 +10,16 @@
     <link rel="stylesheet" type="text/css" href="css/layout.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
 </head>
-
 <body>
 <main></main>
 <div class="container">
     <input data-function="swipe" id="swipe" type="checkbox">
     <label data-function="swipe" for="swipe">&#xf057;</label>
     <label data-function="swipe" for="swipe">&#xf0c9;</label>
-
     <div class="headings">
         <h1>Got your BAC</h1>
         <h2>A tool for estimating your Blood Alcohol Content (BAC)</h2>
     </div>
-
     <div class="sidebar">
         <nav class="menu">
             <li><a href="/">Home</a></li>
@@ -32,32 +28,28 @@
             <li><a href="/profile">Profile</a></li>
             <li><a href="/calculate">Calculate</a></li>
             <li><a href="/balmer">BallmerPeak</a></li>
-            <li><a href="/logout">Log out</a></li>
+            <li><a href="/Logout">log out</a></li>
         </nav>
     </div>
-
 </div>
-
 <div>
-
-        <ul class="fixedContent">
-            <li>Office of Alcohol Policy and Education</li>
-            <li> Blood Alcohol Concentration (BAC) refers to the percent</li>
-            <li>of alcohol (ethyl alcohol or ethanol) in a person's blood stream.</li>
-            <li>A BAC of . 10% means that an individual's blood supply contains</li>
-            <li>one part alcohol for every 1000 parts blood.</li>
-        </ul>
-
-
-
-
+    <ul class="fixedContent">
+        <li><img src="${loggedInUser.profilepic}" alt=""></li>
+        <li>First Name: [[${loggedInUser.firstName}]]</li>
+        <li>Last Name:  [[${loggedInUser.lastName}]]</li>
+        <li>Gender:     [[${loggedInUser.gender}]]</li>
+        <li>Height:     [[${loggedInUser.height}]]</li>
+        <li>Weight:     [[${loggedInUser.weight}]]</li>
+        <li><a href="/profile/update"><button class="button">Update Profile</button></a></li>
+        <li>
+            <form th:action="@{'/profile/delete'}" th:method="delete">
+                <input type="hidden" name="_method" value="delete">
+                <button class="button" type="submit">Delete</button>
+            </form>
+        </li>
+    </ul>
 </div>
 </main>
-
 <footer th:insert="fragments/footer.html :: footer"></footer>
 </body>
-
 </html>
-
-
-

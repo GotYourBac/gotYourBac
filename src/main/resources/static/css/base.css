@@ -28,7 +28,7 @@ label[data-function*='swipe'] {
   display: block;
   width: 42px;
   height: 42px;
-  font: 42px serif;
+  font: 42px fontawesome;
   text-align: center;
   color: #333;
   cursor: pointer;
@@ -54,7 +54,6 @@ input[data-function*='swipe']:checked ~ label:nth-child(2){
 input[data-function*='swipe']:checked ~ label:nth-child(3){
   display: none;
 }
-
 input[data-function*='swipe']:checked ~ .headings {
   transform: translate3d(280px, 0px, 0px);
 }
@@ -98,3 +97,61 @@ h1, p {
 p {
   font-size: 30px;
 }
+
+.headings {
+  flex: 1;
+  padding: 80px 30px;
+  background: #eee;
+  box-shadow: 0 0 5px black;
+  transform: translate3d(0, 0, 0);
+  transition: transform .3s;
+}
+
+.fixedContent{
+/*   position: fixed;
+  bottom: 25%;
+  right: 30%;
+  width: 300px;
+  border: 3px solid #73AD21;
+  margin-left: 20%; */
+font-family: 'Lora', serif;
+font-size: 20px;
+list-style-type: none;
+ background: #eee;
+margin-left:50%;
+margin-top: 10%
+}
+
+.button {
+display: inline-block;
+  padding: 15px 25px;
+  font-size: 24px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #263249;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 5px #999;
+  margin-top: 10pt;
+  margin-bottom: 4pt;
+}
+
+.button:hover {background-color: #eee}
+.button:hover {color: black}
+
+.button:active {
+  background-color: white;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+
+}
+
+.fixedContent li {
+font-size: 30px;
+}
+
+
+

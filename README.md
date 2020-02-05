@@ -32,6 +32,9 @@ This wireframe provides the structure for the rest of the pages in our website
 ### Day 2
 ![Day 2 diagram](assets/Day2.jpg)
 
+### Day 3
+![Day 3 diagram](assets/Day3.jpg)
+
 ## Setup instructions
 
 - On terminal, type `psql`

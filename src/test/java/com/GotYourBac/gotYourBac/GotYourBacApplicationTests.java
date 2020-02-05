@@ -1,14 +1,12 @@
 package com.GotYourBac.gotYourBac;
 
 import com.GotYourBac.gotYourBac.controllers.UserController;
-import com.GotYourBac.gotYourBac.models.ApplicationUserRepository;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.web.servlet.MockMvc;
 
-import static org.assertj.core.api.Assertions.assertThat;
 import static org.hamcrest.Matchers.containsString;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
@@ -27,7 +25,6 @@ class GotYourBacApplicationTests {
 
 	@Test
 	void contextLoads() {
-//		assertThat();
 	}
 
 	//Test homepage rendering
@@ -36,7 +33,7 @@ class GotYourBacApplicationTests {
 		this.mockMvc.perform(get("/"))
 				.andDo(print())
 				.andExpect(status().isOk())
-				.andExpect(content().string(containsString("<h2>Welcome to GotYourBAC</h2>")));
+				.andExpect(content().string(containsString("GotYourBAC is an online calculator for Blood Alcohol Content.")));
 	}
 
 	@Test
@@ -48,5 +45,20 @@ class GotYourBacApplicationTests {
 	}
 
 
+	@Test
+	public void shouldHaveLoginPage() throws Exception {
+		this.mockMvc.perform(get("/login"))
+				.andDo(print())
+				.andExpect(status().isOk())
+				.andExpect(content().string(containsString("<h2>Login here:</h2>")));
+	}
+
+//	@Test
+//	public void shouldHaveProfilePage() throws Exception {
+//		this.mockMvc.perform(get("/profile"))
+//				.andDo(print())
+//				.andExpect(status().isOk())
+//				.andExpect(content().string(containsString("<h2>Users Profile</h2>")));
+//	}
 
 }

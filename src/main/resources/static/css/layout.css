@@ -1,0 +1,61 @@
+
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 2%;
+    width: 100%;
+    color: white;
+    text-align: right;
+}
+footer nav ul {
+    list-style: none;
+}
+footer nav  ul li {
+    color: dodgerblue;
+    display: inline-block;
+    padding: 2%;
+    font-size: 1.5em;
+}
+
+#aboutUsCard li img {
+    width: 200px;
+    height: 200px;
+}
+
+.formDiv {
+    text-align: center;
+    width: 35%;
+    height: 30%;
+    font-size: 1.5em;
+}
+
+form {
+    text-align: center;
+}
+
+.formElement{
+    display: block;
+}
+
+label {
+    width: 200px;
+}
+
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 80%;
+    color: white;
+    text-align: right;
+}
+footer nav ul {
+    list-style: none;
+}
+
+footer nav  ul li {
+    color: dodgerblue;
+    display: inline-block;
+    padding: 2%;
+    font-size: 1.5em;
+}

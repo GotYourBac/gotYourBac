@@ -1,14 +1,57 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Login Page</title>
+    <link href="https://netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/base.css" />
+    <link rel="stylesheet" type="text/css" href="css/layout.css" />
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
 </head>
 <body>
-<form action="/login" method="post">
-    Username: <input type="text" name="username">
-    Password: <input type="password" name="password">
-    <input type="submit" value="Log in">
-</form>
+<main>
+    <div class="container">
+        <input data-function="swipe" id="swipe" type="checkbox">
+        <label data-function="swipe" for="swipe">&#xf057;</label>
+        <label data-function="swipe" for="swipe">&#xf0c9;</label>
+        <div class="headings">
+            <h1>Got your BAC</h1>
+            <h2>A tool for estimating your Blood Alcohol Content (BAC)</h2>
+        </div>
+        <div class="sidebar">
+            <nav class="menu">
+                <li><a href="/">Home</a></li>
+                <li><a href="/registration">Registration</a></li>
+                <li><a href="/login">Login</a></li>
+                <li><a href="/profile">Profile</a></li>
+                <li><a href="/calculate">Calculate</a></li>
+                <li><a href="/balmer">BallmerPeak</a></li>
+                <li><a href="/logout">log out</a></li>
+            </nav>
+        </div>
+    </div>
+    <div class="fixedContent formDiv" >
+        <div th:if="${param.error}">
+            <p>Username and/or password was incorrect. Please try again.</p>
+        </div>
+        <h2>Login here:</h2>
+        <form action="/login" method="post">
+            <div class="formElement">
+                <label>Username:</label>
+                <input type="text" name="username">
+            </div>
+            <div class="formElement">
+                <label>Password:</label>
+                <input type="password" name="password">
+            </div>
+            <div class="formElement">
+                <button type="submit">Login</button>
+            </div>
+        </form>
+    </div>
+</main>
+<footer th:insert="fragments/footer.html :: footer"></footer>
 </body>
 </html>

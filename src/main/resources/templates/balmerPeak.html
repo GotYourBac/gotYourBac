@@ -1,42 +1,27 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Info on Balmer Peak</title>
 </head>
 <body>
-<h1>Science or Fiction?</h1>
+    <header th:insert="fragments/header.html :: header"></header>
+    <main>
+        <nav th:insert="fragments/navigation.html :: navigation"></nav>
+        <h2>Science or Fiction?</h2>
 
-<p>Automatically, all of these beautiful, beautiful things will happen. You can do anything your heart can imagine. You can't have light without dark.
-    You can't know happiness unless you've known sorrow.</p>
-<p>But we're not there yet, so we don't need to worry about it. Very easy to work these to death. You have to make almighty decisions when you're the creator.
-    We'll put some happy little leaves here and there.</p>
-<div class="container">
-    <input data-function="swipe" id="swipe" type="checkbox">
-    <label data-function="swipe" for="swipe">&#xf057;</label>
-    <label data-function="swipe" for="swipe">&#xf0c9;</label>
+        <img src="images/balmerpeak.png">
 
-    <div class="headings">
-        <form class="login" action="">
-            Username: <input type="text" name="username">
-            Password: <input type="password" name="password">
-        </form>
-
-    </div>
-
-
-    <div class="sidebar">
-        <nav class="menu">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Profile</a></li>
-            <li><a href="#">Calculate</a></li>
-            <li><a href="#">BallmerPeak</a></li>
-
-
-
-        </nav>
-    </div>
-
-</div>
+        <p>Automatically, all of these beautiful, beautiful things will happen. You can do anything your heart can imagine. You can't have light without dark.
+            You can't know happiness unless you've known sorrow.</p>
+        <p>But we're not there yet, so we don't need to worry about it. Very easy to work these to death. You have to make almighty decisions when you're the creator.
+            We'll put some happy little leaves here and there.</p>
+        <div class="container">
+            <input data-function="swipe" id="swipe" type="checkbox">
+            <label data-function="swipe" for="swipe">&#xf057;</label>
+            <label data-function="swipe" for="swipe">&#xf0c9;</label>
+        </div>
+    </main>
+    <footer th:insert="fragments/footer.html :: footer"></footer>
 </body>
 </html>

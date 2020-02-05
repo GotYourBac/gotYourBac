@@ -1,8 +1,20 @@
-<nav th:fragment="navigation">
+<nav th:fragment="navigation" xmlns:th="http://www.thymeleaf.org">
     <ul>
-        <li>Home</li>
-        <li>Profile</li>
-        <li>Calculate BAC</li>
-        <li>Log out</li>
+        <a href="/">
+            <li>Home</li>
+        </a>
+        <a href="/profile">
+            <li>Profile</li>
+        </a>
+        <a href="/drinks">
+            <li>Calculate BAC</li>
+        </a>
+        <a href="/balmer">
+            <li>Info on Balmer Peak</li>
+        </a>
+        <a href="/logout">
+            <li>Log out</li>
+        </a>
     </ul>
 </nav>
+

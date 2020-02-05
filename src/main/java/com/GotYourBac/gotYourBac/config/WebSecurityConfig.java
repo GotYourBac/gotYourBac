@@ -47,17 +47,17 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .cors().disable()
                 .csrf().disable()
                 .authorizeRequests()
-                .antMatchers(HttpMethod.GET,"/", "/css/**", "/registration", "/login").permitAll()
+                .antMatchers(HttpMethod.GET,"/", "/css/**", "/images/**", "/registration", "/login", "/about").permitAll()
                 .antMatchers(HttpMethod.POST, "/registration").permitAll()
                 .anyRequest().authenticated()
                 .and()
-                .formLogin()
-                .loginPage("/login")
-                .defaultSuccessUrl("/drinks")
+                    .formLogin()
+                    .loginPage("/login")
+                    .defaultSuccessUrl("/")
                 .and()
-                .logout()
-                .logoutUrl("/logout")
-                .logoutSuccessUrl("/");
+                    .logout()
+                    .logoutUrl("/logout")
+                    .logoutSuccessUrl("/");
     }
 
 }

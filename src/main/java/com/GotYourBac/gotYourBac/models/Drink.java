@@ -1,6 +1,7 @@
 package com.GotYourBac.gotYourBac.models;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 public class Drink {
@@ -13,38 +14,45 @@ public class Drink {
     @ManyToOne
     ApplicationUser appUser;
 
-    String drinkName;
-    float alcoholContent;
-    int numOfDrinks;
-    float drinkSize;
+    public String strIngredient;
+    public float strABV;
+    public float drinkSize;
 
     public Drink() {
     }
 
-    public Drink(String drinkName, float alcoholContent, int numOfDrinks, float drinkSize) {
-        this.drinkName=drinkName;
-        this.alcoholContent = alcoholContent;
-        this.numOfDrinks = numOfDrinks;
+    public Drink(String strIngredient, float strABV, float drinkSize) {
+        this.strIngredient=strIngredient;
+        this.strABV = strABV;
         this.drinkSize = drinkSize;
     }
 
-    public ApplicationUser getAppUser() {
-        return appUser;
+    public String getStrIngredient() {
+        return strIngredient;
     }
 
-    public String getDrinkName() {
-        return drinkName;
+    public float getStrABV() {
+        return strABV;
     }
 
-    public float getAlcoholContent() {
-        return alcoholContent;
-    }
-
-    public int getNumOfDrinks() {
-        return numOfDrinks;
-    }
 
     public float getDrinkSize() {
         return drinkSize;
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public void setStrABV(float strABV) {
+        this.strABV = strABV;
+    }
+
+    public void setDrinkSize(float drinkSize) {
+        this.drinkSize = drinkSize;
+    }
+
+    public void setAppUser(ApplicationUser appUser) {
+        this.appUser = appUser;
     }
 }

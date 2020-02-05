@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Update Profile</title>
+</head>
+
+<body>
+    <header th:insert="fragments/header.html :: header"></header>
+    <main>
+        <nav th:insert="fragments/navigation.html :: navigation"></nav>
+        <h2>Update Your Profile, [[${loggedInUser.getUsername()}]]</h2>
+        <form th:action="@{'/profile/update'}" th:method="put">
+            <input type="hidden" name="_method" value="put">
+            <input type="hidden" name="username" th:value="${loggedInUser.getUsername()}">
+            First Name: <input type="text" name="firstName" th:value="${loggedInUser.firstName}" required>
+            Last Name: <input type="text" name="lastName" th:value="${loggedInUser.lastName}" required>
+            Gender: <select name="gender" required>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                        <option value="non-binary">Non-Binary</option>
+
+        </select>
+            Height: <input type="text" name="height" th:value="${loggedInUser.height}" required>
+            Weight: <input type="text" name="weight" th:value="${loggedInUser.weight}" required>
+            <input type="submit" value="Update">
+        </form>
+    </main>
+    <footer th:insert="fragments/footer.html :: footer"></footer>
+</body>
+
+</html>
