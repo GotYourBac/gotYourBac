@@ -28,4 +28,8 @@ public class HomeController {
         }
         return "aboutus";
     }
+    @GetMapping("/hhchat")
+    public  String getChat(){
+        return "happyHourChat";
+    }
 }

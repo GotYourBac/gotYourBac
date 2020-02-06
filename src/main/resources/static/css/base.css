@@ -28,7 +28,7 @@ label[data-function*='swipe'] {
   display: block;
   width: 42px;
   height: 42px;
-  font: 42px fontawesome;
+  font: 70px fontawesome;
   text-align: center;
   color: #333;
   cursor: pointer;
@@ -82,7 +82,7 @@ input[data-function*='swipe']:checked ~ .sidebar .menu li {
   color: #fff;
   border: 3px solid #fff;
   text-align: center;
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 900;
   display: block;
   text-decoration: none;
@@ -92,7 +92,7 @@ input[data-function*='swipe']:checked ~ .sidebar .menu li {
 h1, p {
   margin: 30px 0;
   font-size: 45px;
-  font-weight: 280;
+  font-weight: bold;
 }
 p {
   font-size: 30px;
@@ -105,17 +105,15 @@ p {
   box-shadow: 0 0 5px black;
   transform: translate3d(0, 0, 0);
   transition: transform .3s;
+  color: #263249;
+
 }
 
-.fixedContent{
-/*   position: fixed;
-  bottom: 25%;
-  right: 30%;
-  width: 300px;
-  border: 3px solid #73AD21;
-  margin-left: 20%; */
+
+
+.fixedContent {
 font-family: 'Lora', serif;
-font-size: 20px;
+font-size: 15px;
 list-style-type: none;
  background: #eee;
 margin-left:50%;
@@ -136,7 +134,7 @@ display: inline-block;
   border-radius: 15px;
   box-shadow: 0 5px #999;
   margin-top: 10pt;
-  margin-bottom: 4pt;
+  margin-bottom: 4em;
 }
 
 .button:hover {background-color: #eee}
@@ -153,5 +151,11 @@ display: inline-block;
 font-size: 30px;
 }
 
+#balmerChart {
+height: 500px;
+width: 90%;
+margin-left: 60pt;
+
+}
 
 
