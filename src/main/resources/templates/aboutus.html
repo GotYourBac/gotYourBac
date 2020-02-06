@@ -5,45 +5,72 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>HomePage</title>
+    <link href="https://netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lora&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/css/base.css" />
     <link rel="stylesheet" type="text/css" href="/css/layout.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
-</head>
-
-<body>
-    <header th:insert="fragments/header.html :: header"></header>
     <main>
-        <nav th:insert="fragments/navigation.html :: navigation"></nav>
-        <h2> [[${username}]], this is about the GotYourBAC team </h2>
-        <p>
-            GotYourBAC is an online calculator for Blood Alcohol Content. If you are thinking about going out to the bar
-            or even the club, this app is for you.
-            Planning your night is the most beneficial way of staying safe and spending wisely. Dont over drink, you can
-            do this by planning out what you would like to drink using this app.
-        </p>
-        <div>
-            <nav>
-                <ul id="aboutUsCard">
-                    <li>
-                        <h3>Hollie</h3>
-                        <img src="images/hollie.jpeg" alt="HolliePic">
-                    </li>
-                    <li>
-                        <h3>Martin</h3>
-                        <img src="images/martin.jpeg" alt="MartinPic">
-                    </li>
-                    <li>
-                        <h3>Phong</h3>
-                        <img src="images/phong.jpeg" alt="phongPic">
-                    </li>
-                    <li>
-                        <h3>Jitendra</h3>
-                        <img src="images/jitendra.jpeg" alt="JitendraPic">
-                    </li>
-                </ul>
+    <div class="container">
+        <input data-function="swipe" id="swipe" type="checkbox">
+        <label data-function="swipe" for="swipe">&#xf057;</label>
+        <label data-function="swipe" for="swipe">&#xf0c9;</label>
+
+        <div class="headings">
+            <h1>Got your BAC</h1>
+            <h2>A tool for estimating your Blood Alcohol Content (BAC)</h2>
+        </div>
+
+        <div class="sidebar">
+            <nav class="menu">
+                <li><a href="/">Home</a></li>
+                <li><a href="/registration">Registration</a></li>
+                <li><a href="/login">Login</a></li>
+                <li><a href="/profile">Profile</a></li>
+                <li><a href="/drinks">Calculate</a></li>
+                <li><a href="/balmer">BallmerPeak</a></li>
+                <li><a href="/logout">Log out</a></li>
             </nav>
         </div>
-    </main>
 
+    </div>
+
+    <div>
+
+        <ul class="fixedContent">
+            <h2> [[${username}]], this is about the GotYourBAC team </h2>
+            <p>
+                GotYourBAC is an online calculator for Blood Alcohol Content. If you are thinking about going out to the bar
+                or even the club, this app is for you.
+                Planning your night is the most beneficial way of staying safe and spending wisely. Dont over drink, you can
+                do this by planning out what you would like to drink using this app.
+            </p>
+            <div>
+                <nav>
+                    <ul id="aboutUsCard">
+                        <li>
+                            <h3>Hollie</h3>
+                            <img src="images/hollie.jpeg" alt="HolliePic">
+                        </li>
+                        <li>
+                            <h3>Martin</h3>
+                            <img src="images/martin.jpeg" alt="MartinPic">
+                        </li>
+                        <li>
+                            <h3>Phong</h3>
+                            <img src="images/phong.jpeg" alt="phongPic">
+                        </li>
+                        <li>
+                            <h3>Jitendra</h3>
+                            <img src="images/jitendra.jpeg" alt="JitendraPic">
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </ul>
+    </div>
+    </main>
     <footer th:insert="fragments/footer.html :: footer"></footer>
 
 </body>

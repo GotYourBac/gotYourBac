@@ -35,7 +35,7 @@ function disconnect() {
 }
 
 function sendName() {
-    stompClient.send("/topic/happyhour", {}, JSON.stringify({'name': $("#name").val()}))
+    stompClient.send("/topic/happyhour", {}, JSON.stringify({'name': $("#name").val() + " has RSVP'd"}))
 }
 
 function showHappyHour(message) {

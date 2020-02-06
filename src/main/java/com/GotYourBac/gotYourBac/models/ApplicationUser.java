@@ -140,8 +140,6 @@ public class ApplicationUser implements UserDetails {
     }
     public float calculateBAC() {
         float BAC;
-
-        int numOfDrinks = 0;
         float genderConstant;
         float alcoholContent = 0.0f;
 

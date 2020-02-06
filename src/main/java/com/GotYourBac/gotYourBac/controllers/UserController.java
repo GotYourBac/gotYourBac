@@ -12,7 +12,10 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.servlet.view.RedirectView;
 
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServletRequest;
 import java.security.Principal;
+
 
 @Controller
 public class UserController {
@@ -34,14 +37,24 @@ public class UserController {
     //Create a new user in DB, ensure we don't user Postgresql pre-defined variables. i.e 'user'
     //added if statement to combat double username which brakes the system
     @PostMapping("/registration")
-    public RedirectView createNewUser(String username, String password, String firstName, String lastName, String gender, double height, float weight) {
+    public RedirectView createNewUser(HttpServletRequest request, String username, String password, String firstName, String lastName, String gender, double height, float weight) {
         if(applicationUserRepository.findByUsername(username) != null){
             return new RedirectView("/registration");
         }
         ApplicationUser newUser = new ApplicationUser(username, passwordEncoder.encode(password), firstName, lastName, gender, height, weight, "https://www.google.com/url?sa=i&url=https%3A%2F%2Fclipartart.com%2Fcategories%2Fdefault-profile-picture-clipart.html&psig=AOvVaw3gGdfGo9_wPSjyhzCtcWKY&ust=1580936665717000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCJCKpZTmuOcCFQAAAAAdAAAAABAD" );
         applicationUserRepository.save(newUser);
+        authWithHttpServletRequest(request,username,password);
         //TODO: change the redirect route to what we decide. For now its to the homepage
         return new RedirectView("/");
+    }
+
+    //https://www.baeldung.com/spring-security-auto-login-user-after-registration
+    public void authWithHttpServletRequest(HttpServletRequest request, String username, String password) {
+        try {
+            request.login(username, password);
+        } catch (ServletException e) {
+            System.out.println("Error while login " + e);
+        }
     }
 
     @GetMapping("/profile")
@@ -77,7 +90,7 @@ public class UserController {
     public RedirectView deleteUser(Principal p){
         ApplicationUser currentUser = applicationUserRepository.findByUsername(p.getName());
         applicationUserRepository.delete(currentUser);
-        return new RedirectView("/");
+        return new RedirectView("/logout");
     }
 
     @GetMapping("/login")

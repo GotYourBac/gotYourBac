@@ -29,7 +29,12 @@ public class HomeController {
         return "aboutus";
     }
     @GetMapping("/hhchat")
-    public  String getChat(){
+    public  String getChat(Principal p, Model m){
+        if(p != null){
+            m.addAttribute("username", p.getName());
+        } else {
+            m.addAttribute("username", "User");
+        }
         return "happyHourChat";
     }
 }

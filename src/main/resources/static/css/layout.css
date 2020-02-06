@@ -1,6 +1,39 @@
 
+/* aboutus cards css */
+#aboutUsCard {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+
+}
+#aboutUsCard li{
+    margin: 1%;
+    width: 250px;
+    height: 350px;
+    background-color: #009797;
+    text-align: center;
+    list-style: none;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
+}
+
+#aboutUsCard li:hover {
+    transition: all .2s ease-in-out;
+    transform: scale(1.03);
+}
+
+#aboutUsCard li h3 {
+    font-size: 1.5em;
+    margin: 10%;
+}
+
+#aboutUsCard li img {
+    width: 200px;
+    height: 200px;
+}
+
 footer {
-    position: fixed;
+    position: relative;
     left: 0;
     bottom: 2%;
     width: 100%;
@@ -29,10 +62,6 @@ footer nav  ul li {
     font-size: 30pt;
 }
 
-form {
-    text-align: center;
-}
-
 .formElement{
     display: block;
     padding: 15px 25px;
@@ -55,8 +84,8 @@ form {
 height: 30px;
 }
 
-label {
-    width: 200px;
+.formDiv form div label {
+    text-align: left;
 }
 
 footer {
@@ -71,7 +100,7 @@ footer nav ul {
     list-style: none;
 }
 
-footer nav  ul li {
+footer nav ul li {
     color: dodgerblue;
     display: inline-block;
     padding: 2%;

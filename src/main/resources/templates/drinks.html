@@ -4,17 +4,46 @@
 <head>
     <meta charset="UTF-8">
     <title>Add Drinks</title>
+    <link href="https://netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lora&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/css/base.css" />
+    <link rel="stylesheet" type="text/css" href="/css/layout.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
 </head>
 
 <body>
-    <header th:insert="fragments/header.html :: header"></header>
-    <main>
-        <nav th:insert="fragments/navigation.html :: navigation"></nav>
+<main>
+<div class="container">
+    <input data-function="swipe" id="swipe" type="checkbox">
+    <label data-function="swipe" for="swipe">&#xf057;</label>
+    <label data-function="swipe" for="swipe">&#xf0c9;</label>
+
+    <div class="headings">
+        <h1>Got your BAC</h1>
+        <h2>A tool for estimating your Blood Alcohol Content (BAC)</h2>
+    </div>
+
+    <div class="sidebar">
+        <nav class="menu">
+            <li><a href="/">Home</a></li>
+            <li><a href="/registration">Registration</a></li>
+            <li><a href="/login">Login</a></li>
+            <li><a href="/profile">Profile</a></li>
+            <li><a href="/drinks">Calculate</a></li>
+            <li><a href="/balmer">BallmerPeak</a></li>
+            <li><a href="/logout">Log out</a></li>
+        </nav>
+    </div>
+
+</div>
+
+<div>
+
+    <div class="fixedContent">
         <h2>Add Drinks</h2>
         <form action="/addDrinks" method="POST">
-            <h3>Add Drinks</h3>
             <label>Please select a drink: </label>
-
             <select name="drinkName" required>
                 <option value="vodka">Vodka</option>
                 <option value="beer">Beer</option>
@@ -46,29 +75,27 @@
                 <form th:action="@{'/drinks/update'}" th:method="put">
                     <input type="hidden" name="_method" value="put">
                     <input type="hidden" name="id" th:value="${drink.id}">
-                <tr>
-                    <td th:text="${drink?.strIngredient}"></td>
-                    <td th:text="${drink?.strABV}"></td>
-                    <input type="number" name="strABV" th:value="${drink?.strABV}" required>
-                    <td th:text="${drink?.numOfDrinks}"></td>
-                    <td th:text="${drink?.drinkSize}"></td>
-                    <select name="drinkSize" th:value="${drink?.drinkSize}" required>
-                        <option value="12">12 oz</option>
-                        <option value="5">5 oz</option>
-                        <option value="1.5">1.5 oz</option>
-
-                    </select>
-                    <td><button type="submit">Update</button></td>
+                    <tr>
+                      <td th:text="${drink?.strIngredient}"></td>
+                      <td th:text="${drink?.strABV}"></td>
+                      <input type="number" name="strABV" th:value="${drink?.strABV}" required>
+                      <td th:text="${drink?.drinkSize}"></td>
+                       <select name="drinkSize" th:value="${drink?.drinkSize}" required>
+                          <option value="12">12 oz</option>
+                          <option value="5">5 oz</option>
+                          <option value="1.5">1.5 oz</option>
+                       </select>
+                      <td><button type="submit">Update</button></td>
                 </form>
-                    <td>
-                        <form th:action="@{'/drinks/delete'}" th:method="delete">
+                      <td>
+                          <form th:action="@{'/drinks/delete'}" th:method="delete">
                             <input type="hidden" name="_method" value="delete">
                             <input type="hidden" name="id" th:value="${drink.id}">
                             <button type="submit"><img src="/images/deleteIcon.png" alt=""></button>
-                        </form>
+                          </form>
 
-                    </td>
-                </tr>
+                      </td>
+                    </tr>
             </th:block>
 
 
@@ -78,6 +105,9 @@
         <h5 th:text="${BAC}"></h5>
 
         <p th:text="${chartBAC}"></p>
+    </div>
+
+
     </main>
     <footer th:insert="fragments/footer.html :: footer"></footer>
 

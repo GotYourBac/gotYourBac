@@ -7,28 +7,75 @@
         content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Update Profile</title>
+    <link href="https://netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lora&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/css/base.css" />
+    <link rel="stylesheet" type="text/css" href="/css/layout.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
 </head>
 
 <body>
-    <header th:insert="fragments/header.html :: header"></header>
-    <main>
-        <nav th:insert="fragments/navigation.html :: navigation"></nav>
+<main>
+<div class="container">
+    <input data-function="swipe" id="swipe" type="checkbox">
+    <label data-function="swipe" for="swipe">&#xf057;</label>
+    <label data-function="swipe" for="swipe">&#xf0c9;</label>
+
+    <div class="headings">
+        <h1>Got your BAC</h1>
+        <h2>A tool for estimating your Blood Alcohol Content (BAC)</h2>
+    </div>
+
+    <div class="sidebar">
+        <nav class="menu">
+            <li><a href="/">Home</a></li>
+            <li><a href="/registration">Registration</a></li>
+            <li><a href="/login">Login</a></li>
+            <li><a href="/profile">Profile</a></li>
+            <li><a href="/drinks">Calculate</a></li>
+            <li><a href="/balmer">BallmerPeak</a></li>
+            <li><a href="/logout">Log out</a></li>
+        </nav>
+    </div>
+</div>
+
+<div>
+    <div class="fixedContent formDiv">
         <h2>Update Your Profile, [[${loggedInUser.getUsername()}]]</h2>
         <form th:action="@{'/profile/update'}" th:method="put">
             <input type="hidden" name="_method" value="put">
             <input type="hidden" name="username" th:value="${loggedInUser.getUsername()}">
-            First Name: <input type="text" name="firstName" th:value="${loggedInUser.firstName}" required>
-            Last Name: <input type="text" name="lastName" th:value="${loggedInUser.lastName}" required>
-            Gender: <select name="gender" required>
-                        <option value="male">Male</option>
-                        <option value="female">Female</option>
-                        <option value="non-binary">Non-Binary</option>
-
-        </select>
-            Height: <input type="text" name="height" th:value="${loggedInUser.height}" required>
-            Weight: <input type="text" name="weight" th:value="${loggedInUser.weight}" required>
-            <input type="submit" value="Update">
+            <div class="formElement">
+                <label>First Name: </label>
+                <input type="text" name="firstName" th:value="${loggedInUser.firstName}" required>
+            </div>
+            <div class="formElement">
+                <label>Last Name</label>
+                <input type="text" name="lastName" th:value="${loggedInUser.lastName}" required>
+            </div>
+            <div class="formElement">
+                <label>Height: </label>
+                <input type="text" name="height" th:value="${loggedInUser.height}" required>
+            </div>
+            <div class="formElement">
+                <label>Weight: </label>
+                <input type="text" name="weight" th:value="${loggedInUser.weight}" required>
+            </div>
+            <div class="formElement">
+                <label>Gender: </label>
+                <select name="gender" required>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="non-binary">Non-Binary</option>
+                </select>
+            </div>
+            <div class="formElement">
+                <input type="submit" value="Update">
+            </div>
         </form>
+    </div>
+</div>
     </main>
     <footer th:insert="fragments/footer.html :: footer"></footer>
 </body>
