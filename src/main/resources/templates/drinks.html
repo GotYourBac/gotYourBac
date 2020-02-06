@@ -75,19 +75,18 @@
                 <form th:action="@{'/drinks/update'}" th:method="put">
                     <input type="hidden" name="_method" value="put">
                     <input type="hidden" name="id" th:value="${drink.id}">
-                    <tr>
-                        <td th:text="${drink?.strIngredient}"></td>
-                        <td th:text="${drink?.strABV}"></td>
-                        <input type="number" name="strABV" th:value="${drink?.strABV}" required>
-                        <td th:text="${drink?.numOfDrinks}"></td>
-                        <td th:text="${drink?.drinkSize}"></td>
-                        <select name="drinkSize" th:value="${drink?.drinkSize}" required>
-                            <option value="12">12 oz</option>
-                            <option value="5">5 oz</option>
-                            <option value="1.5">1.5 oz</option>
+                <tr>
+                    <td th:text="${drink?.strIngredient}"></td>
+                    <td th:text="${drink?.strABV}"></td>
+                    <input type="number" name="strABV" th:value="${drink?.strABV}" required>
+                    <td th:text="${drink?.drinkSize}"></td>
+                    <select name="drinkSize" th:value="${drink?.drinkSize}" required>
+                        <option value="12">12 oz</option>
+                        <option value="5">5 oz</option>
+                        <option value="1.5">1.5 oz</option>
 
-                        </select>
-                        <td><button type="submit">Update</button></td>
+                    </select>
+                    <td><button type="submit">Update</button></td>
                 </form>
                 <td>
                     <form th:action="@{'/drinks/delete'}" th:method="delete">
@@ -95,13 +94,9 @@
                         <input type="hidden" name="id" th:value="${drink.id}">
                         <button type="submit"><img src="/images/deleteIcon.png" alt=""></button>
                     </form>
-
                 </td>
                 </tr>
             </th:block>
-
-
-
         </table>
         <h4>BAC Level</h4>
         <h5 th:text="${BAC}"></h5>
