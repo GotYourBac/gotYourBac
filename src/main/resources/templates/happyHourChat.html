@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Happy Hour Chatroom</title>
+    <title>Happy Hour: RSVP Here, [[${username}]]</title>
     <script
             src="https://code.jquery.com/jquery-3.4.1.min.js"
             integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
             crossorigin="anonymous"></script>
-    <script src="/js/sockjs.js"></script>
-    <script src="/js/stomp.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sockjs-client/1.4.0/sockjs.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/stomp.js/2.3.3/stomp.min.js"></script>
     <script src="/js/app.js"></script>
 </head>
 <body>
@@ -30,7 +30,7 @@
             <form>
                 <div>
                     <label for="name">RSVP for HAPPY HOUR</label>
-                    <input type="text" id="name" placeholder="Your name here...">
+                    <input type="hidden" id="name" th:value="${firstName}">
                 </div>
                 <button id="send" type="submit">RSVP</button>
             </form>
