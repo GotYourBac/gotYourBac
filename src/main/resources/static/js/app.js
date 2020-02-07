@@ -13,13 +13,13 @@ function setConnected(connected) {
 }
 
 function connect() {
-    var socket = new SockJS('/hhchat');
+    var socket = new SockJS('/happyhour');
     stompClient = Stomp.over(socket);
-    stompClient.connect({}, function (frame) {
+    stompClient.connect('','', function (frame) {
         setConnected(true);
         console.log('Connected: ' + frame);
         stompClient.subscribe('/topic/happyhour', function (happyhour) {
-            showHappyHour(JSON.parse(happyhour.body).name);
+            showHappyHour(JSON.parse(happyhour.body).content);
         });
 
     });
@@ -35,7 +35,7 @@ function disconnect() {
 }
 
 function sendName() {
-    stompClient.send("/topic/happyhour", {}, JSON.stringify({'name': $("#name").val() + " has RSVP'd"}))
+    stompClient.send("/app/happyhour", {}, JSON.stringify({'name': $("#name").val()}))
 }
 
 function showHappyHour(message) {

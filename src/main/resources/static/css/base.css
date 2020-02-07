@@ -76,7 +76,7 @@ input[data-function*='swipe']:checked ~ .sidebar .menu li {
 .menu li {
   padding: 10px;
   list-style: none;
-  width: 0%;
+  width: 0;
 }
 .menu li a {
   color: #fff;
@@ -86,9 +86,10 @@ input[data-function*='swipe']:checked ~ .sidebar .menu li {
   font-weight: 900;
   display: block;
   text-decoration: none;
-  padding: 5px 0px 5px 0;
+  padding: 5px 0 5px 0;
   margin: 0 20px;
 }
+
 h1, p {
   margin: 30px 0;
   font-size: 45px;
@@ -158,4 +159,46 @@ margin-left: 60pt;
 
 }
 
+label {
+  display: inline-block;
+  width: 250px;
+}
 
+.select {
+  color: gray;
+  padding: 8px 16px;
+  border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+  cursor: pointer;
+  user-select: none;
+  width: 150px;
+  height: 40px;
+  font-size: 18px;
+
+}
+
+#button {
+display: inline-block;
+  padding: 15px 25px;
+  font-size: 20px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #263249;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 5px #999;
+  margin-top: 10pt;
+  margin-bottom: 4em;
+}
+
+#button:hover {background-color: #eee}
+.button:hover {color: black}
+
+#button:active {
+  background-color: white;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+
+}

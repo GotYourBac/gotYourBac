@@ -51,7 +51,7 @@ public class DrinkController {
     }
 
     @PostMapping("/addDrinks")
-    public RedirectView addADrink(Principal p,Model m, String drinkName, float drinkSize) throws IOException{
+    public RedirectView addADrink(Principal p, String drinkName, float drinkSize) throws IOException{
 
         Gson gson = new Gson();
 
@@ -74,7 +74,7 @@ public class DrinkController {
     };
 
     @DeleteMapping("/drinks/delete")
-    public RedirectView deleteOneDrink(Principal p, long id){
+    public RedirectView deleteOneDrink(long id){
         drinkRepository.deleteById(id);
         return new RedirectView("/drinks");
     }
@@ -88,11 +88,4 @@ public class DrinkController {
         return new RedirectView("/drinks");
     }
 
-
-
-
-    @GetMapping("/balmer")
-    public String getBalmerInfo(){
-        return "balmerPeak";
-    }
 }

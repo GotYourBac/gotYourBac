@@ -38,12 +38,12 @@ public class UserController {
     //added if statement to combat double username which brakes the system
     @PostMapping("/registration")
     public RedirectView createNewUser(HttpServletRequest request, String username, String password, String firstName, String lastName, String gender, double height, float weight) {
-        if(applicationUserRepository.findByUsername(username) != null){
+        if(applicationUserRepository.findByUsername(username.toLowerCase()) != null){
             return new RedirectView("/registration");
         }
-        ApplicationUser newUser = new ApplicationUser(username, passwordEncoder.encode(password), firstName, lastName, gender, height, weight, "https://www.google.com/url?sa=i&url=https%3A%2F%2Fclipartart.com%2Fcategories%2Fdefault-profile-picture-clipart.html&psig=AOvVaw3gGdfGo9_wPSjyhzCtcWKY&ust=1580936665717000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCJCKpZTmuOcCFQAAAAAdAAAAABAD" );
+        ApplicationUser newUser = new ApplicationUser(username.toLowerCase(), passwordEncoder.encode(password), firstName, lastName, gender, height, weight, "https://www.google.com/url?sa=i&url=https%3A%2F%2Fclipartart.com%2Fcategories%2Fdefault-profile-picture-clipart.html&psig=AOvVaw3gGdfGo9_wPSjyhzCtcWKY&ust=1580936665717000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCJCKpZTmuOcCFQAAAAAdAAAAABAD" );
         applicationUserRepository.save(newUser);
-        authWithHttpServletRequest(request,username,password);
+        authWithHttpServletRequest(request,username.toLowerCase(),password);
         //TODO: change the redirect route to what we decide. For now its to the homepage
         return new RedirectView("/");
     }

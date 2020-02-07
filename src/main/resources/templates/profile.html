@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>HomePage</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:700i&display=swap" rel="stylesheet">
     <link href="https://netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Lora&display=swap" rel="stylesheet">
@@ -28,7 +29,7 @@
             <li><a href="/login">Login</a></li>
             <li><a href="/profile">Profile</a></li>
             <li><a href="/drinks">Calculate</a></li>
-            <li><a href="/balmer">BallmerPeak</a></li>
+            <li><a href="/forScience">BallmerPeak</a></li>
             <li><a href="/logout">Log out</a></li>
         </nav>
     </div>
@@ -41,11 +42,11 @@
         <li>Gender:     [[${loggedInUser.gender}]]</li>
         <li>Height:     [[${loggedInUser.height}]]</li>
         <li>Weight:     [[${loggedInUser.weight}]]</li>
-        <li><a href="/profile/update"><button class="button">Update Profile</button></a></li>
+        <li><a href="/profile/update"> <input type="submit" value="Update Profile" class="button"></a></li>
         <li>
             <form th:action="@{'/profile/delete'}" th:method="delete">
                 <input type="hidden" name="_method" value="delete">
-                <button class="button" type="submit">Delete</button>
+                <input type="submit" value="Delete" class="button">
             </form>
         </li>
     </ul>

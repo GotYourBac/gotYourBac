@@ -1,7 +1,6 @@
 package com.GotYourBac.gotYourBac.models;
 
 import javax.persistence.*;
-import java.util.List;
 
 @Entity
 public class Drink {

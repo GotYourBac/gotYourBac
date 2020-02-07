@@ -14,7 +14,7 @@ public class ApplicationUser implements UserDetails {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     long id;
 
-    @OneToMany(mappedBy = "appUser")
+    @OneToMany(mappedBy = "appUser", cascade = CascadeType.ALL)
     public List<Drink> drinkList;
 
     String username;
@@ -154,12 +154,12 @@ public class ApplicationUser implements UserDetails {
         } else if(this.gender.equals("female")) {
             genderConstant = 0.66f;
         } else {
-            genderConstant = 0.73f;
+            genderConstant = 0.69f;
         }
-        float weightInGrams = this.weight +453.592f;
+        float weightInGrams = this.weight + 453.592f;
         float temp = weightInGrams * genderConstant;
         BAC = (alcoholContent / temp);
-        //get the drink list by looping over the users drink
+
         return BAC;
     }
 
@@ -167,15 +167,16 @@ public class ApplicationUser implements UserDetails {
         String bacEffects;
 
         if(BAC < .05) {
-            bacEffects = "Effects: Talkative , more relaxed, and more confident.";
+            bacEffects = "Effects: Talkative , more relaxed, and more confident. In Washington State, you are legally allowed to drive with this BAC." ;
         } else if(BAC > .05 && BAC < .08) {
-            bacEffects = "Effects: Impaired judgement, and reduce inhibitions.";
-        } else if(BAC > .08 && BAC < .15 ) {
-            bacEffects = "Effects: Slurred speech, impaired balance and coordination, unstable emotions and possibly nausea, and vomiting.";
+            bacEffects = "Effects: Impaired judgement, and reduce inhibitions. In Washington State, you are legally allowed to drive with this BAC.";
+        } else if(BAC >= .08 && BAC < .15 ) {
+            bacEffects = "Effects: Slurred speech, impaired balance and coordination, unstable emotions and possibly nausea, and vomiting. In Washington State, you can be charged with DUI if your BAC level is at or above 0.08%.";
+
         } else if(BAC > .15 && BAC < .30) {
-            bacEffects = "Effects: Inadequate breathing, unable to walk without assistance, loss of bladder control and possibly loss of conciousness.";
+            bacEffects = "Effects: Inadequate breathing, unable to walk without assistance, loss of bladder control and possibly loss of consciousness. In Washington State, you can be charged with DUI if your BAC level is at or above 0.08%.";
         } else {
-            bacEffects = "Effects: Possibly see you in the afterlife or the ER.";
+            bacEffects = "Effects: Possibly see you in the afterlife or the ER. In Washington State, you can be charged with DUI if your BAC level is at or above 0.08%.";
         }
         return bacEffects;
     }

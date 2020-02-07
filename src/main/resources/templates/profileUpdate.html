@@ -7,6 +7,7 @@
         content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Update Profile</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:700i&display=swap" rel="stylesheet">
     <link href="https://netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Lora&display=swap" rel="stylesheet">
@@ -34,7 +35,7 @@
             <li><a href="/login">Login</a></li>
             <li><a href="/profile">Profile</a></li>
             <li><a href="/drinks">Calculate</a></li>
-            <li><a href="/balmer">BallmerPeak</a></li>
+            <li><a href="/forScience">For Science</a></li>
             <li><a href="/logout">Log out</a></li>
         </nav>
     </div>
@@ -55,11 +56,11 @@
                 <input type="text" name="lastName" th:value="${loggedInUser.lastName}" required>
             </div>
             <div class="formElement">
-                <label>Height: </label>
+                <label>Height (in inches): </label>
                 <input type="text" name="height" th:value="${loggedInUser.height}" required>
             </div>
             <div class="formElement">
-                <label>Weight: </label>
+                <label>Weight (in lbs): </label>
                 <input type="text" name="weight" th:value="${loggedInUser.weight}" required>
             </div>
             <div class="formElement">
@@ -71,7 +72,7 @@
                 </select>
             </div>
             <div class="formElement">
-                <input type="submit" value="Update">
+                <input class="button" type="submit" value="Update">
             </div>
         </form>
     </div>
