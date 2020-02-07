@@ -14,7 +14,7 @@ public class ApplicationUser implements UserDetails {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     long id;
 
-    @OneToMany(mappedBy = "appUser")
+    @OneToMany(mappedBy = "appUser", cascade = CascadeType.ALL)
     public List<Drink> drinkList;
 
     String username;
