@@ -36,12 +36,17 @@ This wireframe provides the structure for the rest of the pages in our website
 ![Day 3 diagram](assets/Day3.jpg)
 
 ## Setup instructions
+* On terminal, type `psql`
 
-- On terminal, type `psql`
-- type `CREATE DATABASE gotyourbac;`
-- Edit Configuration for the App on the top mid right dropdown menu.
-- In the Environment Variable:
-    - type `DATABASE_URL=postgresql://localhost:5432/gotyourbac`
+* type `CREATE DATABASE gotyourbac;`
+
+* Edit Configuration for the App on the top mid right dropdown menu.
+
+* In the Environment Variable:
+
+    * type `DATABASE_URL=postgresql://localhost:5432/gotyourbac`
+     
+* Run the Application
 
 
 

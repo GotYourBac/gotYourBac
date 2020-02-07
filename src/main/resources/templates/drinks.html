@@ -91,13 +91,13 @@
                             <option value="12">12 oz</option>
                         </select></td>
 
-                        <td><button class="button" type="submit">Update</button></td>
+                        <td><input type="submit" value="Update" class="button"></td>
                     </form>
                           <td>
                               <form th:action="@{'/drinks/delete'}" th:method="delete">
                                 <input type="hidden" name="_method" value="delete">
                                 <input type="hidden" name="id" th:value="${drink.id}">
-                                <button class="button" type="submit"><img src="/images/deleteIcon.png" alt="Delete Icon"></button>
+                                  <input type="submit" value="Delete" class="button">
                             </form>
                           </td>
                         </tr>

@@ -45,7 +45,7 @@ public class HomeController {
         return "forScience";
     }
 
-    @GetMapping("/hhchat")
+    @GetMapping("/happyhour")
     public  String getChat(Principal p, Model m){
         if(p != null){
             ApplicationUser currentUser = applicationUserRepository.findByUsername(p.getName());

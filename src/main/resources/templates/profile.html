@@ -42,11 +42,11 @@
         <li>Gender:     [[${loggedInUser.gender}]]</li>
         <li>Height:     [[${loggedInUser.height}]]</li>
         <li>Weight:     [[${loggedInUser.weight}]]</li>
-        <li><a href="/profile/update"><button class="button">Update Profile</button></a></li>
+        <li><a href="/profile/update"> <input type="submit" value="Update Profile" class="button"></a></li>
         <li>
             <form th:action="@{'/profile/delete'}" th:method="delete">
                 <input type="hidden" name="_method" value="delete">
-                <button class="button" type="submit">Delete</button>
+                <input type="submit" value="Delete" class="button">
             </form>
         </li>
     </ul>
