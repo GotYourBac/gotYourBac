@@ -27,12 +27,13 @@ class GotYourBacApplicationTests {
 	void contextLoads() {
 	}
 
+	//Test homepage rendering
 	@Test
 	public void shouldHaveHomePage() throws Exception {
 		this.mockMvc.perform(get("/"))
 				.andDo(print())
 				.andExpect(status().isOk())
-				.andExpect(content().string(containsString("<li>What is BAC???</li>")));
+				.andExpect(content().string(containsString("GotYourBAC is an online calculator for Blood Alcohol Content.")));
 	}
 
 	@Test
@@ -40,7 +41,7 @@ class GotYourBacApplicationTests {
 		this.mockMvc.perform(get("/registration"))
 				.andDo(print())
 				.andExpect(status().isOk())
-				.andExpect(content().string(containsString("<h2>Register</h2>")));
+				.andExpect(content().string(containsString("<h2>Register new user</h2>")));
 	}
 
 
@@ -65,6 +66,7 @@ class GotYourBacApplicationTests {
 //	public void givenGreetURIWithPostAndFormData_whenMockMVC_thenResponseOK() {
 //		this.mockMvc.perform(post("/greetWithPostAndFormData").param("id", "1")
 //				.param("name", "John Doe")).andDo(print()).andExpect(status().isOk())
+//
 //				.andExpect(content().contentType("application/json;charset=UTF-8"))
 //				.andExpect(jsonPath("$.message").value("Hello World John Doe!!!"))
 //				.andExpect(jsonPath("$.id").value(1));

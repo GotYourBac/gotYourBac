@@ -1,9 +1,10 @@
 package com.GotYourBac.gotYourBac.controllers;
 
 import org.springframework.boot.web.servlet.error.ErrorController;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.GetMapping;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.http.HttpServletRequest;
@@ -13,9 +14,8 @@ import javax.servlet.http.HttpServletRequest;
     @Controller
     public class AppErrorController implements ErrorController {
 
-        @RequestMapping("/error")
-        public String handleError(HttpServletRequest request, Model model) {
-//
+        @GetMapping("/error")
+        public String handleError(Model model) {
             return "error";
         }
 

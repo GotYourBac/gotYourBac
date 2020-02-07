@@ -154,12 +154,12 @@ public class ApplicationUser implements UserDetails {
         } else if(this.gender.equals("female")) {
             genderConstant = 0.66f;
         } else {
-            genderConstant = 0.69f;
+            genderConstant = 0.73f;
         }
-        float weightInGrams = this.weight + 453.592f;
+        float weightInGrams = this.weight +453.592f;
         float temp = weightInGrams * genderConstant;
         BAC = (alcoholContent / temp);
-
+        //get the drink list by looping over the users drink
         return BAC;
     }
 

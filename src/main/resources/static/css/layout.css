@@ -1,11 +1,5 @@
 
 /* aboutus cards css */
-@media screen and (min-width: 960px) {
-    html {
-        zoom: 70%;
-    }
-}
-
 #aboutUsCard {
     display: flex;
     flex-direction: row;
@@ -35,7 +29,30 @@
 
 #aboutUsCard li img {
     width: 200px;
-    height: 230px;
+    height: 200px;
+}
+
+footer {
+    position: relative;
+    left: 0;
+    bottom: 2%;
+    width: 100%;
+    color: white;
+    text-align: right;
+}
+footer nav ul {
+    list-style: none;
+}
+footer nav  ul li {
+    color: dodgerblue;
+    display: inline-block;
+    padding: 2%;
+    font-size: 1.5em;
+}
+
+#aboutUsCard li img {
+    width: 200px;
+    height: 200px;
 }
 
 .formDiv {
@@ -63,15 +80,22 @@
 
 }
 
-/*.formElement input {
+.formElement input {
 height: 30px;
-}*/
+}
 
 .formDiv form div label {
     text-align: left;
 }
 
-
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 80%;
+    color: white;
+    text-align: right;
+}
 footer nav ul {
     list-style: none;
 }
@@ -81,13 +105,4 @@ footer nav ul li {
     display: inline-block;
     padding: 2%;
     font-size: 1.5em;
-}
-
-footer {
-    position: relative;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    color: white;
-    text-align: center;
 }
