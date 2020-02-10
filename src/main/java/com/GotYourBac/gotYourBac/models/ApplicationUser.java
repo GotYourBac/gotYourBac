@@ -12,7 +12,7 @@ public class ApplicationUser implements UserDetails {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    long id;
+    long id; // it is never being used
 
     @OneToMany(mappedBy = "appUser", cascade = CascadeType.ALL)
     public List<Drink> drinkList;
@@ -40,7 +40,7 @@ public class ApplicationUser implements UserDetails {
         this.profilepic = profilepic;
     }
 
-    @Override
+    @Override //what is ? for?
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return null;
     }
@@ -79,6 +79,7 @@ public class ApplicationUser implements UserDetails {
         return firstName;
     }
 
+    //the method is never being used, should delete them
     public String getLastName() {
         return lastName;
     }
@@ -128,7 +129,7 @@ public class ApplicationUser implements UserDetails {
         this.profilepic = profilepic;
     }
 
-
+// delete unused code for cleaness
 //    totalAlcoholContent {
 //        drinkSizeInGrams = sizeofDrink * 28.3494;
 //        Return alcohollContent * drinkSizeInGrams;

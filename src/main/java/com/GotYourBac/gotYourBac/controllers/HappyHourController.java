@@ -8,7 +8,7 @@ import org.springframework.stereotype.Controller;
 
 @Controller
 public class HappyHourController {
-
+//looks good to me
     @MessageMapping("/happyhour")
     @SendTo("/topic/happyhour")
     public HappyHour happyHour(Message message) throws Exception{

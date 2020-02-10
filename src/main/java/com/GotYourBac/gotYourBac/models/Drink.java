@@ -37,7 +37,7 @@ public class Drink {
 
     public float getDrinkSize() {
         return drinkSize;
-    }
+    } //method is never being used
 
     public long getId() {
         return id;
