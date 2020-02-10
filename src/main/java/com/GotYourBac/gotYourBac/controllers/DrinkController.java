@@ -50,7 +50,7 @@ public class DrinkController {
         return "drinks";
     }
 
-    @PostMapping("/addDrinks")
+    @PostMapping("/addDrinks") // separate the method of calling api and storing the data
     public RedirectView addADrink(Principal p, String drinkName, float drinkSize) throws IOException{
 
         Gson gson = new Gson();

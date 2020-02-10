@@ -56,7 +56,7 @@ public class UserController {
             System.out.println("Error while login " + e);
         }
     }
-
+//the getmapping method is never being used
     @GetMapping("/profile")
     public String showProfile(Principal p, Model m) {
         if(p != null) {
@@ -65,14 +65,14 @@ public class UserController {
         }
         return "profile";
     }
-
+    //the getmapping method is never being used
     @GetMapping("/profile/update")
     public String getUpdatePage(Principal p, Model m) {
         ApplicationUser loggedInUser = applicationUserRepository.findByUsername(p.getName());
         m.addAttribute("loggedInUser", loggedInUser);
         return "profileUpdate";
     }
-
+    //the putmapping method is never being used
     @PutMapping("/profile/update")
     public RedirectView updateUser(Principal p, String username, String firstName, String lastName, String gender, String height, String weight) {
         ApplicationUser loggedInUser = applicationUserRepository.findByUsername(p.getName());
@@ -85,14 +85,14 @@ public class UserController {
         applicationUserRepository.save(loggedInUser);
         return new RedirectView("/profile");
     }
-
+    //the deletemapping method is never being used
     @DeleteMapping("/profile/delete")
     public RedirectView deleteUser(Principal p){
         ApplicationUser currentUser = applicationUserRepository.findByUsername(p.getName());
         applicationUserRepository.delete(currentUser);
         return new RedirectView("/logout");
     }
-
+    //the getmapping method is never being used
     @GetMapping("/login")
     public String loginAsAUser(){
         return "login";

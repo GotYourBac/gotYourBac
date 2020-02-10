@@ -5,7 +5,7 @@ import org.springframework.stereotype.Controller;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 
-
+//i don's see an error page for this controller
 
 //https://www.baeldung.com/spring-boot-custom-error-page
 
