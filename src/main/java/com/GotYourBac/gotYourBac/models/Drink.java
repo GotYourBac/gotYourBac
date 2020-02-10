@@ -8,14 +8,14 @@ public class Drink {
     //TODO: probably need some getters and setters depending on the app, but lets safely add each one we need throughout the process.
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    long id;
+    private long id;
 
     @ManyToOne
     ApplicationUser appUser;
 
-    public String strIngredient;
-    public float strABV;
-    public float drinkSize;
+    private String strIngredient;
+    private float strABV;
+    private float drinkSize;
 
     public Drink() {
     }

@@ -50,7 +50,7 @@ public class DrinkController {
         return "drinks";
     }
 
-    @PostMapping("/addDrinks")
+    @PostMapping("/drinks/add")
     public RedirectView addADrink(Principal p, String drinkName, float drinkSize) throws IOException{
 
         Gson gson = new Gson();
@@ -68,7 +68,7 @@ public class DrinkController {
 
         Drink newDrink = gson.fromJson(incomingArr.get(0), Drink.class);
         newDrink.setAppUser(loggedInUser);
-        newDrink.drinkSize = drinkSize;
+        newDrink.setDrinkSize(drinkSize);
         drinkRepository.save(newDrink);
         return new RedirectView("/drinks");
     };

@@ -69,7 +69,11 @@ public class UserController {
     @GetMapping("/profile/update")
     public String getUpdatePage(Principal p, Model m) {
         ApplicationUser loggedInUser = applicationUserRepository.findByUsername(p.getName());
-        m.addAttribute("loggedInUser", loggedInUser);
+        m.addAttribute("firstName", loggedInUser.getFirstName());
+        m.addAttribute("lastName", loggedInUser.getLastName());
+        m.addAttribute("gender", loggedInUser.getGender());
+        m.addAttribute("height", loggedInUser.getHeight());
+        m.addAttribute("weight", loggedInUser.getWeight());
         return "profileUpdate";
     }
 

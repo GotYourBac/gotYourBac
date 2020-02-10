@@ -1,7 +1,7 @@
 package com.GotYourBac.gotYourBac.controllers;
 
-import com.GotYourBac.gotYourBac.models.HappyHour;
-import com.GotYourBac.gotYourBac.models.Message;
+
+import com.GotYourBac.gotYourBac.models.*;
 import org.springframework.messaging.handler.annotation.MessageMapping;
 import org.springframework.messaging.handler.annotation.SendTo;
 import org.springframework.stereotype.Controller;

@@ -43,25 +43,25 @@
 
 <div>
     <div class="fixedContent formDiv">
-        <h2>Update Your Profile, [[${loggedInUser.getUsername()}]]</h2>
+        <h2>Update Your Profile</h2>
         <form th:action="@{'/profile/update'}" th:method="put">
             <input type="hidden" name="_method" value="put">
-            <input type="hidden" name="username" th:value="${loggedInUser.getUsername()}">
+<!--            <input type="hidden" name="username" th:value="${loggedInUser.getUsername()}">-->
             <div class="formElement">
                 <label>First Name: </label>
-                <input type="text" name="firstName" th:value="${loggedInUser.firstName}" required>
+                <input type="text" name="firstName" th:value="${firstName}" required>
             </div>
             <div class="formElement">
                 <label>Last Name</label>
-                <input type="text" name="lastName" th:value="${loggedInUser.lastName}" required>
+                <input type="text" name="lastName" th:value="${lastName}" required>
             </div>
             <div class="formElement">
                 <label>Height (in inches): </label>
-                <input type="text" name="height" th:value="${loggedInUser.height}" required>
+                <input type="text" name="height" th:value="${height}" required>
             </div>
             <div class="formElement">
                 <label>Weight (in lbs): </label>
-                <input type="text" name="weight" th:value="${loggedInUser.weight}" required>
+                <input type="text" name="weight" th:value="${weight}" required>
             </div>
             <div class="formElement">
                 <label>Gender: </label>

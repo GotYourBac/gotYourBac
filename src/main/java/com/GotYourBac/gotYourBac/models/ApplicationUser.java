@@ -129,9 +129,6 @@ public class ApplicationUser implements UserDetails {
     }
 
 
-//    totalAlcoholContent {
-//        drinkSizeInGrams = sizeofDrink * 28.3494;
-//        Return alcohollContent * drinkSizeInGrams;
 
     public float getTotalAlcoholContent(float drinkSize, float alcoholContent) {
         float drinkSizeInGrams;
@@ -144,7 +141,7 @@ public class ApplicationUser implements UserDetails {
         float alcoholContent = 0.0f;
 
         for(Drink drink : this.drinkList){
-            alcoholContent += getTotalAlcoholContent(drink.drinkSize, drink.getStrABV());
+            alcoholContent += getTotalAlcoholContent(drink.getDrinkSize(), drink.getStrABV());
 
         }
 
