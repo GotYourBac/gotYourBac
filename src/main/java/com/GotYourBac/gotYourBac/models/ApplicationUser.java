@@ -133,6 +133,8 @@ public class ApplicationUser implements UserDetails {
 //        drinkSizeInGrams = sizeofDrink * 28.3494;
 //        Return alcohollContent * drinkSizeInGrams;
 
+//    should have left out unused code/ comments!
+
     public float getTotalAlcoholContent(float drinkSize, float alcoholContent) {
         float drinkSizeInGrams;
         drinkSizeInGrams = drinkSize * 28.3494f;
@@ -182,3 +184,5 @@ public class ApplicationUser implements UserDetails {
     }
 
 }
+
+//Why not say federally legal? the federally legal BAC is .08, not just washington

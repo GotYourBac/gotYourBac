@@ -23,4 +23,5 @@ import org.springframework.web.bind.annotation.RequestMapping;
         }
 
     }
+//Why did you not use the Home Controller for this? Also why try to customize a pre-fabricated function?
 

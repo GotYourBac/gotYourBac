@@ -11,7 +11,7 @@ public class HappyHourController {
 
     @MessageMapping("/happyhour")
     @SendTo("/topic/happyhour")
-    public HappyHour happyHour(Message message) throws Exception{
+    public HappyHour happyHour(Message message) throws Exception {
         Thread.sleep(1000);
         return new HappyHour(message.getName() + " has RSVP'd to OHANA!");
     }

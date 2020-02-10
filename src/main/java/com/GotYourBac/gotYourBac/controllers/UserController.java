@@ -48,7 +48,7 @@ public class UserController {
         return new RedirectView("/");
     }
 
-    //https://www.baeldung.com/spring-security-auto-login-user-after-registration
+//    https://www.baeldung.com/spring-security-auto-login-user-after-registration
     public void authWithHttpServletRequest(HttpServletRequest request, String username, String password) {
         try {
             request.login(username, password);
@@ -85,6 +85,7 @@ public class UserController {
         applicationUserRepository.save(loggedInUser);
         return new RedirectView("/profile");
     }
+//    why are the setters not in the model?
 
     @DeleteMapping("/profile/delete")
     public RedirectView deleteUser(Principal p){

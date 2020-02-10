@@ -51,7 +51,8 @@ public class DrinkController {
     }
 
     @PostMapping("/addDrinks")
-    public RedirectView addADrink(Principal p, String drinkName, float drinkSize) throws IOException{
+    public RedirectView addADrink(Principal p, String drinkName, float drinkSize) throws IOException {
+//        nice exception handler incase url is empty
 
         Gson gson = new Gson();
 
